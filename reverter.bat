@@ -1,13 +1,15 @@
 @ECHO OFF
 
-set /P url= Enter Git Repository URL:
+echo You will lose all changes since the last pull. Are you sure? y/n
 
-git clone %url%
+set /P confirmation= y/n:
 
-git add -A
-
-git commit -m "initial commit"
-
-git checkout development
+IF %confirmation%==y (
+	git reset --hard
+	echo Changes have been reverted.
+)
+ElSE (
+	echo Cancelled.
+)
 
 REM > NUL
