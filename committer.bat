@@ -2,9 +2,9 @@
 
 git add -A
 
-set /P confirmation= Enter a message for this commit and push: 
+set /P message= Enter a message for this commit and push: 
 
-git commit -m "%confirmation%"
+git commit -m "%message%"
 
 git push
 
