@@ -1,4 +1,4 @@
-REM @ECHO OFF
+@ECHO OFF
 
 git add -A
 
@@ -8,6 +8,6 @@ git commit -m "%confirmation%"
 
 git push
 
-echo Successful
+echo Successful.
 
 pause
