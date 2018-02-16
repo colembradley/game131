@@ -7,8 +7,7 @@ set /P confirmation= y/n:
 IF %confirmation%==y (
 	git reset --hard
 	echo Changes have been reverted.
-)
-ElSE (
+) ElSE (
 	echo Cancelled.
 )
 
