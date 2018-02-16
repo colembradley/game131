@@ -12,4 +12,4 @@ ElSE (
 	echo Cancelled.
 )
 
-REM > NUL
+pause
