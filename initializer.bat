@@ -1,13 +1,15 @@
 @ECHO OFF
 
-set /P url= Enter Git Repository URL:
+set game131=https://github.com/colembradley/game131.git
 
-git clone %url%
+set /P url= Enter Git Repository name:
 
-git add -A
+IF "%url%"=="game131" set repoURL=%game131%
 
-git commit -m "initial commit"
+git clone %repoURL%
+
+cd %url%
 
 git checkout development
 
-REM > NUL
+echo Successful.
