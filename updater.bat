@@ -1,14 +1,12 @@
 @ECHO OFF
 
-echo You will lose all changes since the last pull. Are you sure? y/n
+for /f %%a in ('git status -s') do set lines=%%a
 
-set /P confirmation= y/n:
-
-IF %confirmation%==y (
-	git reset --hard --quiet
-	echo Changes have been reverted.
-) ElSE (
-	echo Cancelled.
+IF %lines% > 0 (
+	git pull --quiet
+) ELSE (
+	echo You have uncommitted changes. You must commit or revert changes first.
 )
+
 
 pause

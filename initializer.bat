@@ -6,10 +6,12 @@ set /P url= Enter Git Repository name:
 
 IF "%url%"=="game131" set repoURL=%game131%
 
-git clone %repoURL%
+git clone %repoURL% --quiet
 
 cd %url%
 
-git checkout development
+git checkout development --quiet
 
 echo Successful.
+
+pause
