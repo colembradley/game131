@@ -51,6 +51,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4238337625499230}
   - component: {fileID: 114594674945821710}
+  - component: {fileID: 114918348016720290}
   m_Layer: 0
   m_Name: crossbowRoot
   m_TagString: Untagged
@@ -112,6 +113,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeed: 90
   bullet: {fileID: 1661654854948130, guid: 67be7cc21b809b248aa74acd459fe641, type: 2}
+--- !u!114 &114918348016720290
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1987967453939484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bd938a430a29cc439a2176158c224ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212685254987622114
 SpriteRenderer:
   m_ObjectHideFlags: 1

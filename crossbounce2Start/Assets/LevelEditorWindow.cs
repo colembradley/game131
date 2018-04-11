@@ -43,6 +43,7 @@ public class LevelEditorWindow : EditorWindow {
                 //Spawn the object
                 GameObject newObstacle = Instantiate(obstacleTemplate);
                 newObstacle.name = obstacleTemplate.name;
+                newObstacle.transform.position = new Vector3(0, 0, 0);
             }
         }
 
@@ -73,6 +74,7 @@ public class LevelEditorWindow : EditorWindow {
                 //Spawn the object
                 GameObject newTarget = Instantiate(targetTemplate);
                 newTarget.name = targetTemplate.name;
+                newTarget.transform.position = new Vector3(0, 0, 0);
             }
         }
         if (GUILayout.Button("Spawn Crossbow"))
@@ -102,6 +104,7 @@ public class LevelEditorWindow : EditorWindow {
                 //Spawn the object
                 GameObject newTarget = Instantiate(targetTemplate);
                 newTarget.name = targetTemplate.name;
+                newTarget.transform.position = new Vector3(0,0,0);
             }
         }
     }
