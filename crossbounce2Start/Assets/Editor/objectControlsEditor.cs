@@ -43,53 +43,64 @@ public class objectControlsEditor : Editor
 		            if(currentEvent.keyCode == KeyCode.W)
 		            {
 		                objectScript.Move(new Vector3(0f,moveSpeed,0f));
-		            }
+                        currentEvent.Use();
+                    }
 		            if (currentEvent.keyCode == KeyCode.A)
 		            {
 		                objectScript.Move(new Vector3(-moveSpeed, 0f, 0f));
-		            }
+                        currentEvent.Use();
+                    }
 		            if (currentEvent.keyCode == KeyCode.S)
 		            {
 		                objectScript.Move(new Vector3(0f, -moveSpeed, 0f));
-		            }
+                        currentEvent.Use();
+                    }
 		            if (currentEvent.keyCode == KeyCode.D)
 		            {
 		                objectScript.Move(new Vector3(moveSpeed, 0f, 0f));
-		            }
+                        currentEvent.Use();
+                    }
 					if (currentEvent.keyCode == KeyCode.Q)
 					{
 						objectScript.Rotate(rotateDegrees);
-					}
+                        currentEvent.Use();
+                    }
 					if (currentEvent.keyCode == KeyCode.E)
 					{
 						objectScript.Rotate(-rotateDegrees);
-					}
+                        currentEvent.Use();
+                    }
 					if (currentEvent.keyCode == KeyCode.LeftArrow)
 					{
 						objectScript.Scale(new Vector3(-scaleSpeed, 0f, 0f));
-					}
+                        currentEvent.Use();
+                    }
 					if (currentEvent.keyCode == KeyCode.RightArrow)
 					{
 						objectScript.Scale(new Vector3(scaleSpeed, 0f, 0f));
-					}
+                        currentEvent.Use();
+                    }
 					if (currentEvent.keyCode == KeyCode.UpArrow)
 					{
 						objectScript.Scale(new Vector3(0f, scaleSpeed, 0f));
-					}
+                        currentEvent.Use();
+                    }
 					if (currentEvent.keyCode == KeyCode.DownArrow)
 					{
 						objectScript.Scale(new Vector3(0f, -scaleSpeed, 0f));
-					}
+                        currentEvent.Use();
+                    }
 		        }
-            currentEvent.Use();
             break;
             case EventType.KeyUp:
                 //MonoBehaviour.print("Key up: " + currentEvent.keyCode);
-                currentEvent.Use();
                 break;
             default:
                 break;
         }
+        inheritedBehavior();
     }
+
+    protected virtual void inheritedBehavior(){}
 
 }
