@@ -98,9 +98,6 @@ public class objectControlsEditor : Editor
             default:
                 break;
         }
-        inheritedBehavior();
     }
-
-    protected virtual void inheritedBehavior(){}
 
 }
