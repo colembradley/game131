@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\track.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Editor\trackEditor.cs">
     <Files>
-      <File FileName="Assets\objectControls.cs" Line="12" Column="2" />
-      <File FileName="Assets\Editor\objectControlsEditor.cs" Line="30" Column="3" />
-      <File FileName="Assets\Editor\trackEditor.cs" Line="50" Column="41" />
-      <File FileName="Assets\track.cs" Line="17" Column="18" />
+      <File FileName="Assets\objectControls.cs" Line="27" Column="72" />
+      <File FileName="Assets\Editor\objectControlsEditor.cs" Line="65" Column="12" />
+      <File FileName="Assets\Editor\trackEditor.cs" Line="47" Column="44" />
+      <File FileName="Assets\track.cs" Line="11" Column="8" />
+      <File FileName="Assets\MoveBetweenTwoPoints.cs" Line="14" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

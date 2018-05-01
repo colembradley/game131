@@ -8,6 +8,9 @@ public class trackEditor : Editor {
 
     SerializedProperty useTrack;
     SerializedProperty moveSpeed;
+	SerializedProperty position;
+	SerializedProperty moveBackwards;
+	float positionFloat;
 
     public float moveObstacleSpeed = 0.15f;
     public float rotateDegrees = 5.625f;
@@ -19,13 +22,23 @@ public class trackEditor : Editor {
         if (sceneViews.Count > 0) (sceneViews[0] as SceneView).Focus();
         useTrack = serializedObject.FindProperty("useTrack");
         moveSpeed = serializedObject.FindProperty("moveSpeed");
+		position = serializedObject.FindProperty("position");
+		moveBackwards = serializedObject.FindProperty("moveBackwards");
     }
 
     public override void OnInspectorGUI()
     {
+		positionFloat = 0f;
         serializedObject.Update();
         EditorGUILayout.PropertyField(useTrack);
+		if (useTrack.boolValue == true) {
+			EditorGUILayout.LabelField ("Use the usual controls to scale and rotate track");
+		}
         EditorGUILayout.PropertyField(moveSpeed);
+		EditorGUILayout.LabelField ("Drag slider to tune obstacle position:");
+		positionFloat = EditorGUILayout.Slider (positionFloat, 0f,0.1f);
+		EditorGUILayout.PropertyField(moveBackwards);
+		position.floatValue = positionFloat;
         serializedObject.ApplyModifiedProperties();
     }
 
@@ -34,6 +47,12 @@ public class trackEditor : Editor {
         Event currentEvent = Event.current;
 
         track objectScript = target as track;
+
+		objectScript.UpdateSpeed ();
+		objectScript.TuneObstaclePos ();
+		if (!objectScript.started) {
+			objectScript.MoveBackwards ();
+		}
 
         if (serializedObject.FindProperty("useTrack").boolValue == true)
         {

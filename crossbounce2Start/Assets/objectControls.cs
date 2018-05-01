@@ -23,6 +23,9 @@ public class objectControls : MonoBehaviour {
 	public void Rotate(float angle)
 	{
 		transform.rotation *= Quaternion.Euler (0f, 0f, angle);
+		if (transform.GetChild (0) != null && transform.GetChild (0).name == "track") {
+			transform.GetChild(0).rotation *= Quaternion.Euler (0f, 0f, -angle);
+		}
 	}
 
 	public void Scale(Vector3 scale)
