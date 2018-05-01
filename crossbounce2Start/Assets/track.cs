@@ -14,7 +14,7 @@ public class track : MonoBehaviour {
 
     public void Move(Vector3 moveby)
     {
-        transform.parent.position += moveby;
+        transform.position += moveby;
     }
 
     public void Rotate(float angle)

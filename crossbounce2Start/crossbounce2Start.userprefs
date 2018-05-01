@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Editor\objectControlsEditor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\track.cs">
     <Files>
       <File FileName="Assets\objectControls.cs" Line="12" Column="2" />
-      <File FileName="Assets\Editor\objectControlsEditor.cs" Line="30" Column="36" />
+      <File FileName="Assets\Editor\objectControlsEditor.cs" Line="30" Column="3" />
+      <File FileName="Assets\Editor\trackEditor.cs" Line="50" Column="41" />
+      <File FileName="Assets\track.cs" Line="17" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

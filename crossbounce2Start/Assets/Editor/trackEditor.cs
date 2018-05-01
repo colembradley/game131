@@ -44,6 +44,7 @@ public class trackEditor : Editor {
                 case EventType.KeyDown:
                     if (currentEvent.keyCode != KeyCode.None)
                     {
+					
                         if (currentEvent.keyCode == KeyCode.W)
                         {
                             objectScript.Move(new Vector3(0f, moveObstacleSpeed, 0f));
