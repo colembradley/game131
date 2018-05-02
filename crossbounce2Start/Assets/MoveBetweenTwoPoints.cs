@@ -40,7 +40,6 @@ public class MoveBetweenTwoPoints : MonoBehaviour {
         }
         else
         {
-            transform.position = currentTarget;
             isMovingToStart = !isMovingToStart;
             return moveMagnitude - toCurrentTarget.magnitude;
         }

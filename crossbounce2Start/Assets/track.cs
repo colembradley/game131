@@ -44,7 +44,7 @@ public class track : MonoBehaviour {
         if (!started)
         {
             Vector3 dir = endPoint.position - startPoint.position;
-            dir.Normalize();
+            //dir.Normalize();
             Vector3 startPointPos = startPoint.transform.position;
             transform.parent.position = startPointPos + (position * dir);
             transform.position = transform.parent.position + (-position * dir);
