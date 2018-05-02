@@ -6,7 +6,8 @@ public class MoveBetweenTwoPoints : MonoBehaviour {
 
 	public Transform startPosition;
 	public Transform endPosition;
-    public bool isMovingToStart = true;
+    [HideInInspector]
+    public bool isMovingToStart;
 	[HideInInspector]
     public float speed = 4.0f;
 	private bool started = false;
@@ -16,29 +17,15 @@ public class MoveBetweenTwoPoints : MonoBehaviour {
 	}
 
 	void Update () {
-		Move ();
-	}
-
-	public void Move(){
-		float moveMagnitude = speed * Time.deltaTime;
-		if (startPosition != endPosition)
-		{
-			while (moveMagnitude > 0)
-			{
-				moveMagnitude = ResolveMovement(moveMagnitude);
-			}
-		}
-	}
-
-	public void Move(float moveMagnitude){
-		if (!started) {
-			if (startPosition != endPosition) {
-				while (moveMagnitude > 0) {
-					moveMagnitude = ResolveMovement (moveMagnitude);
-				}
-			}
-		}
-	}
+        float moveMagnitude = speed * Time.deltaTime;
+        if (startPosition != endPosition)
+        {
+            while (moveMagnitude > 0)
+            {
+                moveMagnitude = ResolveMovement(moveMagnitude);
+            }
+        }
+    }
 
     public float ResolveMovement(float moveMagnitude)
     {

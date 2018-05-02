@@ -8,6 +8,8 @@ public class LevelEditorWindow : EditorWindow {
 
     private static LevelEditorWindow instance;
 
+    private float trackMovementSpeed = 1f;
+    
     public static void ShowWindow()
     {
         instance = GetWindow<LevelEditorWindow>();
@@ -16,7 +18,11 @@ public class LevelEditorWindow : EditorWindow {
 
     private void OnGUI()
     {
-        if(GUILayout.Button("Spawn Obstacle"))
+
+        EditorGUILayout.LabelField("Default track movement speed:");
+        trackMovementSpeed = EditorGUILayout.FloatField(trackMovementSpeed);
+
+        if (GUILayout.Button("Spawn Obstacle"))
         {
 
             // get the asset's GUID
@@ -44,6 +50,7 @@ public class LevelEditorWindow : EditorWindow {
                 GameObject newObstacle = Instantiate(obstacleTemplate);
                 newObstacle.name = obstacleTemplate.name;
                 newObstacle.transform.position = new Vector3(0, 0, 0);
+                newObstacle.transform.GetChild(0).GetComponent<track>().moveSpeed = trackMovementSpeed;
             }
         }
 

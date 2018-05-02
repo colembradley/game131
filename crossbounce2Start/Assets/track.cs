@@ -15,6 +15,8 @@ public class track : MonoBehaviour {
 
 	void Start(){
 		started = true;
+        transform.parent.GetComponent<MoveBetweenTwoPoints>().enabled = useTrack;
+        MoveBackwards();
 	}
 
     public void Move(Vector3 moveby)
@@ -39,7 +41,14 @@ public class track : MonoBehaviour {
 
 	public void TuneObstaclePos()
 	{
-		transform.parent.GetComponent<MoveBetweenTwoPoints> ().Move (position);
+        if (!started)
+        {
+            Vector3 dir = endPoint.position - startPoint.position;
+            dir.Normalize();
+            Vector3 startPointPos = startPoint.transform.position;
+            transform.parent.position = startPointPos + (position * dir);
+            transform.position = transform.parent.position + (-position * dir);
+        }
 	}
 
 	public void MoveBackwards()
