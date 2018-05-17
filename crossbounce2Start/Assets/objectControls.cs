@@ -30,6 +30,9 @@ public class objectControls : MonoBehaviour {
 
 	public void Scale(Vector3 scale)
 	{
+		var child = transform.GetChild (0);
+		child.parent = null;
 		transform.localScale += scale;
+		child.parent = transform;
 	}
 }

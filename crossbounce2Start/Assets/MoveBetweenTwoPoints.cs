@@ -44,4 +44,5 @@ public class MoveBetweenTwoPoints : MonoBehaviour {
             return moveMagnitude - toCurrentTarget.magnitude;
         }
     }
+
 }

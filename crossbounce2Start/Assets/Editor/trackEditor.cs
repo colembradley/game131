@@ -34,7 +34,7 @@ public class trackEditor : Editor {
         serializedObject.Update();
         EditorGUILayout.PropertyField(useTrack);
 		if (useTrack.boolValue == true) {
-			EditorGUILayout.LabelField ("Usual controls scale and rotate track, Q and E and Arrows");
+			EditorGUILayout.LabelField ("Use the arrows to move the track endpoint");
 		}
         EditorGUILayout.PropertyField(moveSpeed);
         if (!started && useTrack.boolValue)
@@ -91,16 +91,6 @@ public class trackEditor : Editor {
                         if (currentEvent.keyCode == KeyCode.D)
                         {
                             objectScript.Move(new Vector3(moveObstacleSpeed, 0f, 0f));
-                            currentEvent.Use();
-                        }
-                        if (currentEvent.keyCode == KeyCode.Q)
-                        {
-                            objectScript.Rotate(rotateDegrees);
-                            currentEvent.Use();
-                        }
-                        if (currentEvent.keyCode == KeyCode.E)
-                        {
-                            objectScript.Rotate(-rotateDegrees);
                             currentEvent.Use();
                         }
                         if (currentEvent.keyCode == KeyCode.LeftArrow)

@@ -24,11 +24,6 @@ public class track : MonoBehaviour {
 		transform.parent.position += moveby;
     }
 
-    public void Rotate(float angle)
-    {
-        transform.rotation *= Quaternion.Euler(0f, 0f, angle);
-    }
-
     public void Scale(Vector3 scale)
     {
         transform.localScale += scale;
@@ -55,4 +50,15 @@ public class track : MonoBehaviour {
 	{
 		transform.parent.GetComponent<MoveBetweenTwoPoints> ().isMovingToStart = moveBackwards;
 	}
+
+	void OnDrawGizmosSelected(){
+		if (useTrack) {
+			Gizmos.color = Color.green;
+			Gizmos.DrawSphere (startPoint.position, 0.1f);
+			Gizmos.DrawSphere (endPoint.position, 0.1f);
+			Gizmos.color = Color.white;
+			Gizmos.DrawLine (startPoint.position, endPoint.position);
+		}
+	}
+
 }

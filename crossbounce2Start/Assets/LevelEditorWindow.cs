@@ -115,6 +115,7 @@ public class LevelEditorWindow : EditorWindow {
             }
         }
 		EditorGUILayout.LabelField("Use 'W''A''S''D', 'Q' and 'E', and the arrow keys to move, rotate, and scale selected objects, respectively.  Bounciness can be edited via the script attached to the object.");
+		EditorGUILayout.LabelField("Track layout can be edited via the 'track' object inside of obstacles");
     }
 
 }
